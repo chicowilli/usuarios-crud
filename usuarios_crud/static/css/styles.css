@@ -1,0 +1,55 @@
+body {
+    margin: 30px;
+    font-family: Arial, sans-serif;
+}
+
+.page-shell {
+    width: 90%;
+    max-width: 900px;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+h1 {
+    margin: 0;
+    font-size: 32px;
+}
+
+.nuevo-link {
+    color: #06c;
+}
+
+.table-wrap {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+th,
+td {
+    padding: 8px;
+    border: 1px solid #000;
+}
+
+th {
+    background: #ddd;
+}
+
+@media (max-width: 600px) {
+    .page-shell {
+        width: 100%;
+    }
+
+    .header-container {
+        gap: 12px;
+    }
+}

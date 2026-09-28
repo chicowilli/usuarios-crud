@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ver usuario</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <main class="page-shell">
+        <h1>Usuario {{ usuario.id }}</h1>
+
+        <div class="user-info">
+            <p><strong>Nombre completo:</strong> {{ usuario.nombre }} {{ usuario.apellido }}</p>
+            <p><strong>E-mail:</strong> {{ usuario.email }}</p>
+            <p><strong>Fecha de creación:</strong> {{ usuario.created_at.strftime('%Y-%m-%d') if usuario.created_at else '' }}</p>
+            <p><strong>Fecha de actualización:</strong> {{ usuario.updated_at.strftime('%Y-%m-%d') if usuario.updated_at else '' }}</p>
+        </div>
+
+        <p class="acciones">
+            <a href="{{ url_for('editar_usuario', usuario_id=usuario.id) }}">Editar</a>
+            <a href="{{ url_for('borrar_usuario', usuario_id=usuario.id) }}">Borrar</a>
+            <a href="{{ url_for('listar_usuarios') }}">Volver</a>
+        </p>
+    </main>
+</body>
+</html>
